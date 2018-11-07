@@ -63,7 +63,8 @@ addToCartButtonsDOM.forEach(addToCartButtonDOM => {
                 cartItemDOM.querySelector(".cart__item__quantity").innerText =
                   cartItem.quantity; //-cartItem.quantity accepted
               } else {
-                cartItemDOM.remove();
+                cartItemDOM.classList.add("cart__item--removed");
+                setTimeout(() => cartItemDOM.remove(), 300);
                 cart = cart.filter(cartItem => cartItem.name !== product.name);
                 addToCartButtonDOM.innerText = "Add To Cart";
               }
