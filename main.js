@@ -35,7 +35,7 @@ addToCartButtonsDOM.forEach(addToCartButtonDOM => {
       );
       cart.push(product);
       addToCartButtonDOM.innerText = "In Cart";
-
+      addToCartButtonDOM.disabled = true;
       const cartItemsDOM = cartDOM.querySelectorAll(".cart__item");
       cartItemsDOM.forEach(cartItemDOM => {
         if (
@@ -64,9 +64,10 @@ addToCartButtonsDOM.forEach(addToCartButtonDOM => {
                   cartItem.quantity; //-cartItem.quantity accepted
               } else {
                 cartItemDOM.classList.add("cart__item--removed");
-                setTimeout(() => cartItemDOM.remove(), 300);
+                setTimeout(() => cartItemDOM.remove(), 250);
                 cart = cart.filter(cartItem => cartItem.name !== product.name);
                 addToCartButtonDOM.innerText = "Add To Cart";
+                addToCartButtonDOM.disabled = false;
               }
             });
           });
