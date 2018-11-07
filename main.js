@@ -65,6 +65,7 @@ addToCartButtonsDOM.forEach(addToCartButtonDOM => {
               } else {
                 cartItemDOM.remove();
                 cart = cart.filter(cartItem => cartItem.name !== product.name);
+                addToCartButtonDOM.innerText = "Add To Cart";
               }
             });
           });
