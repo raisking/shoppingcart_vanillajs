@@ -162,12 +162,12 @@ function addCartFooter() {
       .querySelector('[data-action="CLEAR_CART"]')
       .addEventListener("click", () => clearCart());
     document
-      .querySelector('[data-action="CLEAR_CART"]')
+      .querySelector('[data-action="CHECKOUT"]')
       .addEventListener("click", () => checkout());
   }
 }
 
-function clearcart() {
+function clearCart() {
   cartDOM.querySelectorAll(".cart__item").forEach(cartItemDOM => {
     cartItemDOM.classList.add("cart__item--removed");
     setTimeout(() => cartItemDOM.remove(), 250);
@@ -179,6 +179,7 @@ function clearcart() {
     addToCartButtonDOM.innerText = "Add To Cart";
     addToCartButtonDOM.disabled = false;
   });
+  // console.log(checkout);
 }
 
 function checkout() {
